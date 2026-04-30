@@ -10,8 +10,8 @@ function resolveTheme(mode) {
 }
 
 export function ThemeProvider({ children }) {
-  const [mode, setMode] = useState(() => localStorage.getItem("sm_theme_mode") || "auto");
-  const [theme, setTheme] = useState(() => resolveTheme(localStorage.getItem("sm_theme_mode") || "auto"));
+  const [mode, setMode] = useState(() => localStorage.getItem("sm_theme_mode") || "light");
+  const [theme, setTheme] = useState(() => resolveTheme(localStorage.getItem("sm_theme_mode") || "light"));
 
   useEffect(() => {
     localStorage.setItem("sm_theme_mode", mode);

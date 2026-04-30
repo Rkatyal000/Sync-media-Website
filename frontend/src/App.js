@@ -16,6 +16,7 @@ import Methodology from "./pages/Methodology";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Solutions from "./pages/Solutions";
+import Audience from "./pages/Audience";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -42,7 +43,9 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/products" element={<Products />} />
+                <Route path="/platform" element={<Products />} />
                 <Route path="/services" element={<Products />} />
+                <Route path="/audience" element={<Audience />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/case-studies" element={<CaseStudies />} />
                 <Route path="/methodology" element={<Methodology />} />

@@ -61,20 +61,18 @@ export default function Footer() {
             <h4>Company</h4>
             <Link to="/about">About</Link>
             <Link to="/blog">Blog</Link>
-            <Link to="/case-studies">Case Studies</Link>
+            <Link to="/audience">Audience</Link>
             <Link to="/contact">Contact</Link>
           </div>
           <div className="footer-col">
             <h4>For</h4>
-            <Link to="/solutions">Advertisers</Link>
-            <Link to="/solutions">Agencies</Link>
-            <Link to="/solutions">Broadcasters</Link>
+            <Link to="/products">Advertisers</Link>
+            <Link to="/products">Agencies</Link>
+            <Link to="/products">Broadcasters</Link>
           </div>
           <div className="footer-col">
             <h4>Resources</h4>
-            <Link to="/methodology">Methodology</Link>
             <Link to="/blog">Blog</Link>
-            <Link to="/case-studies">Proof</Link>
             <Link to="/contact">Book a Demo</Link>
           </div>
         </div>

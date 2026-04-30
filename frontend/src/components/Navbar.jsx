@@ -5,12 +5,10 @@ import { useTheme } from "./ThemeProvider";
 
 const LINKS = [
   { to: "/", label: "Home" },
-  { to: "/products", label: "Products" },
-  { to: "/solutions", label: "Solutions" },
-  { to: "/methodology", label: "Methodology" },
-  { to: "/blog", label: "Blog" },
-  { to: "/case-studies", label: "Case Studies" },
+  { to: "/products", label: "Platform" },
+  { to: "/audience", label: "Audience" },
   { to: "/about", label: "About" },
+  { to: "/blog", label: "Blog" },
   { to: "/contact", label: "Contact" },
 ];
 

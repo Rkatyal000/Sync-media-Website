@@ -1,31 +1,31 @@
 # SYNC Media Website — PRD
 
-## Original Problem Statement
-Clone `Sync-media-Website-2` and add a clients/logos section where real brand logos load via Google's favicon service (Amazon, Zydus, GRT, Beam Suntory, Jockey, Yum!, LG, DS Group, Standard Chartered, Aditya Birla, etc.) — floating in two opposite-direction marquee rows with hover lift. Bump header logo to ~62px and footer logo to ~92px (72px on small screens). Insert clients section between value pillars and product showcase on the homepage.
+## Problem statement (latest iteration)
+Strict-execution production build: preserve all approved text/typography verbatim; merge the older content depth with the current premium minimal design system; rebuild nav to Platform | Audience | About | Blog | Contact; add About, Audience, and IPL blog with exact supplied copy; convert credibility strip to monochrome equal-height infinite scroller; fix "Media is now cross-screen / Measurement should be too" single-line layout; default to Light Mode; disable incomplete sections from the nav.
 
 ## Architecture
-- Frontend: React (CRA + craco), React Router, Tailwind, custom CSS in `index.css`/`App.css`.
-- Backend: FastAPI, MongoDB (motor), endpoints at `/api/*`.
-- Reverse proxy serves frontend on `:3000` and backend on `:8001`.
+- Frontend: React 18 + craco + Tailwind, custom CSS in `src/index.css`.
+- Backend: FastAPI + motor (MongoDB), `/api/*`.
 
-## What's been implemented (Apr 30, 2026)
-- Replaced `/app` source with the user-provided `Sync-media-Website-2-main` project (preserved `.env` files).
-- **ClientMarquee** (`/app/frontend/src/components/ClientMarquee.jsx`)
-  - 51 brand chips, two opposing marquee rows (70s / 85s).
-  - Logo source fallback chain: Google s2 favicons → Clearbit → initial-letter chip.
-  - Each chip = 36px white rounded badge + brand wordmark.
-  - Hover pauses scroll; individual chip hover-lift with accent shadow.
-  - Cinematic `mask-image` edge fade plus absolute fade overlays.
-- **Footer logo** bumped to 92px desktop / 72px mobile (inline 55px override removed, sizing moved to CSS).
-- Header logo retained at 62px (already updated upstream).
-- Section already wired into Home.jsx between hero and value pillars.
+## Implemented (Apr 30, 2026 — session 2)
+- **Navbar** reduced to Platform | Audience | About | Blog | Contact. Solutions/Methodology/Case Studies removed from nav (routes kept, pages live for backwards compatibility).
+- **ThemeProvider** defaults to `light` (was `auto`).
+- **Accent color** now `#0066cc` (locked brand accent).
+- **Home hero**: title has no period; no "SYNC." eyebrow. Left-aligned. Typography untouched.
+- **Philosophy section**: `.phi-line` → `white-space: nowrap` on desktop so "Media is now cross-screen." and "Measurement should be too." each fit on one line without any font-size change; wraps on ≤760px.
+- **ClientMarquee**: rewritten as monochrome, strict equal-height (40px) infinite marquee with slow 90s/105s loops, Google s2 favicons → Clearbit → text fallback. No hover-lift, no chip pills, no animation gimmicks. Grayscale 100% + opacity 0.65 → full color on hover.
+- **Footer**: logo 92px desktop / 72px mobile, links cleaned of Case Studies / Methodology.
+- **/audience** page created with EXACT copy from the supplied docx: hero, 6 sections, propensity questions list, closing CTA. Includes the **Exposure → Behaviour → Propensity → Micro-Flights → Activation → Learning Loop** system-flow visual (thin #0066cc connectors, dashed dividers, responsive vertical stack on mobile).
+- **/blog/ipl-2026-audience-creation-cross-media-measurement-india** published with verbatim body, GEO answer block at top (as quote), and the "Talk to Our Team" CTA paragraph at the bottom.
+- **Blog categories** reduced to All / Learnings / Insights / Case Study. All legacy posts retagged.
+- **Routes added**: `/audience`, `/platform` (alias of /products).
 
-## Tech Stack
-- React 18, Tailwind, lucide-react
-- FastAPI, motor, pydantic
-- MongoDB
+## Verified
+- `/audience` → 200
+- `/blog/ipl-2026-audience-creation-cross-media-measurement-india` → 200
+- Bundle contains "Platform", "Audience", new marquee classes, and IPL slug.
 
-## Backlog / Next
-- P1: Real SVG/PNG logo overrides for brands whose Google favicon is low-res (Apple, LG, etc.) for crisper display.
-- P2: Theme-aware logo invert for dark mode (currently white badge holds favicons regardless of theme).
-- P2: Lazy-mount marquee via IntersectionObserver to defer 100+ image requests until in view.
+## Deferred / next
+- Swap still-referenced `CaseStudies` + `Solutions` + `Methodology` page files for 404-redirects if full removal is desired (currently reachable only via direct URL).
+- Author profile photos & richer biography blocks for the leadership team on /about.
+- Add "Learnings" / "Case Study" tag distribution to more posts once new pieces are written.
