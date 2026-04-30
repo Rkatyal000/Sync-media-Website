@@ -79,43 +79,77 @@ const FLOW = [
 /* Hero illustration: floating screen sources funnelling into "audience model" */
 function HeroFlow() {
   const sources = [
-    { x: 60,  y: 30,  label: "TV",      Icon: Tv },
-    { x: 60,  y: 90,  label: "OTT",     Icon: PlayCircle },
-    { x: 60,  y: 150, label: "YouTube", Icon: Youtube },
-    { x: 60,  y: 210, label: "Mobile",  Icon: Smartphone },
+    { x: 150, y: 40,  label: "TV",      Icon: Tv },
+    { x: 150, y: 100, label: "OTT",     Icon: PlayCircle },
+    { x: 150, y: 160, label: "YouTube", Icon: Youtube },
+    { x: 150, y: 220, label: "Mobile",  Icon: Smartphone },
   ];
   return (
-    <svg className="aud-hero-svg" viewBox="0 0 760 260" aria-hidden="true">
+    <svg className="aud-hero-svg" viewBox="0 0 880 270" aria-hidden="true">
       <defs>
         <linearGradient id="audLine" x1="0" x2="1">
           <stop offset="0%"   stopColor="#0066cc" stopOpacity="0" />
           <stop offset="50%"  stopColor="#0066cc" stopOpacity="0.7" />
           <stop offset="100%" stopColor="#0066cc" stopOpacity="0" />
         </linearGradient>
+        <radialGradient id="audHubGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%"  stopColor="#0066cc" stopOpacity="0.18" />
+          <stop offset="100%" stopColor="#0066cc" stopOpacity="0" />
+        </radialGradient>
       </defs>
-      {sources.map((s, i) => (
+
+      {/* Hub glow */}
+      <circle cx="600" cy="135" r="90" fill="url(#audHubGlow)" />
+
+      {/* Source nodes & labels */}
+      {sources.map((s) => (
         <g key={s.label}>
           <circle cx={s.x} cy={s.y} r="6" fill="#0066cc" />
-          <text x={s.x - 16} y={s.y + 4} textAnchor="end" className="aud-hero-svg-label">{s.label}</text>
-          <path
-            d={`M 70 ${s.y} C 280 ${s.y}, 360 130, 520 130`}
-            fill="none"
-            stroke="url(#audLine)"
-            strokeWidth="1.4"
-            className="aud-hero-svg-path"
-            style={{ animationDelay: `${i * 0.18}s` }}
-          />
+          <circle cx={s.x} cy={s.y} r="10" fill="none" stroke="#0066cc" strokeOpacity="0.25" />
+          <text x={s.x - 18} y={s.y + 4} textAnchor="end" className="aud-hero-svg-label">
+            {s.label}
+          </text>
         </g>
       ))}
-      {/* central node */}
-      <circle cx="540" cy="130" r="18" fill="none" stroke="#0066cc" strokeWidth="1.5" className="aud-hero-svg-pulse" />
-      <circle cx="540" cy="130" r="8" fill="#0066cc" />
-      <text x="565" y="124" className="aud-hero-svg-label-strong">Audience model</text>
-      <text x="565" y="142" className="aud-hero-svg-label">propensity · micro-flights · learning</text>
 
-      <path d="M 558 130 L 700 130" stroke="#0066cc" strokeOpacity="0.5" strokeDasharray="3 4" />
-      <text x="700" y="120" className="aud-hero-svg-label">Outcomes</text>
-      <circle cx="700" cy="130" r="3" fill="#0066cc" />
+      {/* Convergence curves */}
+      {sources.map((s, i) => (
+        <path
+          key={`p-${i}`}
+          d={`M ${s.x + 8} ${s.y} C 320 ${s.y}, 440 135, 590 135`}
+          fill="none"
+          stroke="url(#audLine)"
+          strokeWidth="1.4"
+          className="aud-hero-svg-path"
+          style={{ animationDelay: `${i * 0.18}s` }}
+        />
+      ))}
+
+      {/* Travelling particles along each path */}
+      {sources.map((s, i) => (
+        <circle key={`d-${i}`} r="3" fill="#0066cc" className="aud-hero-svg-dot">
+          <animateMotion
+            dur="3.6s"
+            repeatCount="indefinite"
+            begin={`${i * 0.45}s`}
+            path={`M ${s.x + 8} ${s.y} C 320 ${s.y}, 440 135, 590 135`}
+          />
+        </circle>
+      ))}
+
+      {/* Central node — concentric rings */}
+      <circle cx="600" cy="135" r="26" fill="none" stroke="#0066cc" strokeOpacity="0.18" />
+      <circle cx="600" cy="135" r="18" fill="none" stroke="#0066cc" strokeWidth="1.5" className="aud-hero-svg-pulse" />
+      <circle cx="600" cy="135" r="8"  fill="#0066cc" />
+
+      {/* Hub label (above so it never overlaps the outcome line) */}
+      <text x="600" y="100" textAnchor="middle" className="aud-hero-svg-label-strong">Audience model</text>
+      <text x="600" y="172" textAnchor="middle" className="aud-hero-svg-label">propensity · micro-flights · learning</text>
+
+      {/* Outcome line + endpoint */}
+      <path d="M 626 135 L 800 135" stroke="#0066cc" strokeOpacity="0.5" strokeDasharray="4 5" className="aud-hero-svg-outcome" />
+      <circle cx="800" cy="135" r="4" fill="#0066cc" />
+      <text x="800" y="118" textAnchor="middle" className="aud-hero-svg-label">Outcomes</text>
     </svg>
   );
 }

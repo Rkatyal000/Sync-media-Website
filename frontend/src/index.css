@@ -3541,32 +3541,41 @@ section { overflow: hidden; }
 /* Hero diagram */
 .about-hero--rich .about-hero-diagram-wrap {
   margin: 56px auto 0;
-  max-width: 760px;
-  padding: 24px 16px 18px;
+  max-width: 880px;
+  padding: 32px 28px 28px;
   background: var(--bg-elev, var(--bg));
   border: 1px solid var(--line);
   border-radius: 22px;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.02), 0 24px 40px -32px rgba(15, 23, 42, 0.18);
+  overflow: hidden;
 }
 .about-hero-diagram { width: 100%; height: auto; display: block; }
-.about-hero-diagram-label  { font: 600 11px/1 "Inter", sans-serif; fill: var(--fg-muted); letter-spacing: 0.08em; text-transform: uppercase; }
-.about-hero-diagram-label-strong { font: 700 13px/1 "Inter", sans-serif; fill: var(--fg); letter-spacing: -0.005em; }
+.about-hero-diagram-label  { font: 600 12px/1 "Inter", sans-serif; fill: var(--fg-muted); letter-spacing: 0.08em; text-transform: uppercase; }
+.about-hero-diagram-label-strong { font: 700 14px/1 "Inter", sans-serif; fill: var(--fg); letter-spacing: -0.005em; }
 .about-hero-diagram-path {
-  stroke-dasharray: 200;
-  stroke-dashoffset: 200;
+  stroke-dasharray: 320;
+  stroke-dashoffset: 320;
   animation: aboutDraw 2.4s cubic-bezier(.2,.7,.2,1) forwards;
 }
 @keyframes aboutDraw {
   to { stroke-dashoffset: 0; }
 }
 .about-hero-diagram-pulse {
-  transform-origin: 540px 110px;
+  transform-box: fill-box;
+  transform-origin: center;
   animation: aboutPulse 2.6s ease-in-out infinite;
 }
 @keyframes aboutPulse {
-  0%, 100% { transform: scale(1); opacity: 0.8; }
+  0%, 100% { transform: scale(1);    opacity: 0.85; }
   50%      { transform: scale(1.18); opacity: 0.35; }
 }
+.about-hero-diagram-dot {
+  filter: drop-shadow(0 0 6px rgba(0, 102, 204, 0.55));
+}
+.about-hero-diagram-outcome {
+  stroke-dasharray: 4 5;
+  animation: aboutDashFlow 1.4s linear infinite;
+}
+@keyframes aboutDashFlow { to { stroke-dashoffset: -18; } }
 
 /* Cards with icons */
 .about-cards { gap: 18px; }
@@ -3741,17 +3750,25 @@ section { overflow: hidden; }
    ============================================================ */
 
 .aud-hero-svg { width: 100%; height: auto; display: block; }
-.aud-hero-svg-label { font: 600 11px/1 "Inter", sans-serif; fill: var(--fg-muted); letter-spacing: 0.08em; text-transform: uppercase; }
-.aud-hero-svg-label-strong { font: 700 13px/1 "Inter", sans-serif; fill: var(--fg); letter-spacing: -0.005em; }
+.aud-hero-svg-label { font: 600 12px/1 "Inter", sans-serif; fill: var(--fg-muted); letter-spacing: 0.08em; text-transform: uppercase; }
+.aud-hero-svg-label-strong { font: 700 14px/1 "Inter", sans-serif; fill: var(--fg); letter-spacing: -0.005em; }
 .aud-hero-svg-path {
-  stroke-dasharray: 240;
-  stroke-dashoffset: 240;
+  stroke-dasharray: 320;
+  stroke-dashoffset: 320;
   animation: audDraw 2.6s cubic-bezier(.2,.7,.2,1) forwards;
 }
 @keyframes audDraw { to { stroke-dashoffset: 0; } }
 .aud-hero-svg-pulse {
-  transform-origin: 540px 130px;
+  transform-box: fill-box;
+  transform-origin: center;
   animation: aboutPulse 2.6s ease-in-out infinite;
+}
+.aud-hero-svg-dot {
+  filter: drop-shadow(0 0 6px rgba(0, 102, 204, 0.55));
+}
+.aud-hero-svg-outcome {
+  stroke-dasharray: 4 5;
+  animation: aboutDashFlow 1.4s linear infinite;
 }
 
 /* Rich flow strip */

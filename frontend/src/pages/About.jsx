@@ -197,51 +197,85 @@ const INVESTORS = [
 
 /* Subtle hero illustration: cross-screen lines converging into one node. */
 function HeroDiagram() {
+  const sources = [
+    { x: 150, y: 40,  label: "TV" },
+    { x: 150, y: 95,  label: "OTT" },
+    { x: 150, y: 150, label: "YouTube" },
+    { x: 150, y: 205, label: "Meta" },
+  ];
   return (
-    <svg className="about-hero-diagram" viewBox="0 0 760 220" aria-hidden="true">
+    <svg className="about-hero-diagram" viewBox="0 0 880 260" aria-hidden="true">
       <defs>
         <linearGradient id="aboutLine" x1="0" x2="1">
           <stop offset="0%" stopColor="#0066cc" stopOpacity="0" />
           <stop offset="50%" stopColor="#0066cc" stopOpacity="0.7" />
           <stop offset="100%" stopColor="#0066cc" stopOpacity="0" />
         </linearGradient>
+        <radialGradient id="aboutHubGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%"  stopColor="#0066cc" stopOpacity="0.18" />
+          <stop offset="100%" stopColor="#0066cc" stopOpacity="0" />
+        </radialGradient>
       </defs>
-      {/* Source nodes */}
-      {[
-        { x: 60, y: 30, label: "TV" },
-        { x: 60, y: 80, label: "OTT" },
-        { x: 60, y: 130, label: "YouTube" },
-        { x: 60, y: 180, label: "Meta" },
-      ].map((n) => (
+
+      {/* hub glow */}
+      <circle cx="600" cy="125" r="80" fill="url(#aboutHubGlow)" />
+
+      {/* Source nodes + labels */}
+      {sources.map((n) => (
         <g key={n.label}>
-          <circle cx={n.x} cy={n.y} r="5" fill="#0066cc" />
-          <text x={n.x - 16} y={n.y + 4} textAnchor="end" className="about-hero-diagram-label">
+          <circle cx={n.x} cy={n.y} r="6" fill="#0066cc" />
+          <circle cx={n.x} cy={n.y} r="10" fill="none" stroke="#0066cc" strokeOpacity="0.25" />
+          <text x={n.x - 18} y={n.y + 4} textAnchor="end" className="about-hero-diagram-label">
             {n.label}
           </text>
         </g>
       ))}
-      {/* Convergence lines */}
-      {[30, 80, 130, 180].map((y, i) => (
+
+      {/* Convergence curves */}
+      {sources.map((n, i) => (
         <path
-          key={y}
-          d={`M 70 ${y} C 260 ${y}, 380 110, 520 110`}
+          key={`p-${i}`}
+          d={`M ${n.x + 8} ${n.y} C 320 ${n.y}, 440 125, 590 125`}
           fill="none"
           stroke="url(#aboutLine)"
-          strokeWidth="1.2"
+          strokeWidth="1.4"
           className="about-hero-diagram-path"
           style={{ animationDelay: `${i * 0.18}s` }}
         />
       ))}
-      {/* Central node */}
-      <circle cx="540" cy="110" r="14" fill="none" stroke="#0066cc" strokeWidth="1.5" className="about-hero-diagram-pulse" />
-      <circle cx="540" cy="110" r="6" fill="#0066cc" />
-      <text x="565" y="114" className="about-hero-diagram-label-strong">
+
+      {/* Travelling particles along each path */}
+      {sources.map((n, i) => (
+        <circle key={`d-${i}`} r="3" fill="#0066cc" className="about-hero-diagram-dot">
+          <animateMotion
+            dur="3.6s"
+            repeatCount="indefinite"
+            begin={`${i * 0.45}s`}
+            path={`M ${n.x + 8} ${n.y} C 320 ${n.y}, 440 125, 590 125`}
+          />
+        </circle>
+      ))}
+
+      {/* Central node — concentric rings + core */}
+      <circle cx="600" cy="125" r="22" fill="none" stroke="#0066cc" strokeOpacity="0.18" />
+      <circle cx="600" cy="125" r="14" fill="none" stroke="#0066cc" strokeWidth="1.5" className="about-hero-diagram-pulse" />
+      <circle cx="600" cy="125" r="6"  fill="#0066cc" />
+
+      {/* Hub label (positioned away from outcome line, above) */}
+      <text x="600" y="92" textAnchor="middle" className="about-hero-diagram-label-strong">
         One audience view
       </text>
-      {/* Outcome line */}
-      <path d="M 555 110 L 700 110" stroke="#0066cc" strokeOpacity="0.5" strokeDasharray="3 4" />
-      <text x="700" y="100" className="about-hero-diagram-label">Outcomes</text>
-      <circle cx="700" cy="110" r="3" fill="#0066cc" />
+
+      {/* Outcome line + endpoint */}
+      <path
+        d="M 622 125 L 800 125"
+        stroke="#0066cc"
+        strokeOpacity="0.5"
+        strokeDasharray="4 5"
+        className="about-hero-diagram-outcome"
+      />
+      <circle cx="800" cy="125" r="4" fill="#0066cc" />
+      <text x="800" y="148" textAnchor="middle" className="about-hero-diagram-label">Outcomes</text>
     </svg>
   );
 }
