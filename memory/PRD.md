@@ -13,7 +13,7 @@ Strict-execution production build: preserve all approved text/typography verbati
 - **Accent color** now `#0066cc` (locked brand accent).
 - **Home hero**: title has no period; no "SYNC." eyebrow. Left-aligned. Typography untouched.
 - **Philosophy section**: `.phi-line` → `white-space: nowrap` on desktop so "Media is now cross-screen." and "Measurement should be too." each fit on one line without any font-size change; wraps on ≤760px.
-- **ClientMarquee**: rewritten as monochrome, strict equal-height (40px) infinite marquee with slow 90s/105s loops, Google s2 favicons → Clearbit → text fallback. No hover-lift, no chip pills, no animation gimmicks. Grayscale 100% + opacity 0.65 → full color on hover.
+- **ClientMarquee**: rich-chip layout (white rounded pill, 36px badge + wordmark) across **three opposing-direction floating rows** (72s / 86s / 64s, middle row reversed). Logo source chain: **Clearbit → Google s2 favicon → monochrome letter fallback**. Cinematic mask-image edge fade + absolute fade overlays. Hover pauses scroll; individual chips lift with accent-tinted shadow.
 - **Footer**: logo 92px desktop / 72px mobile, links cleaned of Case Studies / Methodology.
 - **/audience** page created with EXACT copy from the supplied docx: hero, 6 sections, propensity questions list, closing CTA. Includes the **Exposure → Behaviour → Propensity → Micro-Flights → Activation → Learning Loop** system-flow visual (thin #0066cc connectors, dashed dividers, responsive vertical stack on mobile).
 - **/blog/ipl-2026-audience-creation-cross-media-measurement-india** published with verbatim body, GEO answer block at top (as quote), and the "Talk to Our Team" CTA paragraph at the bottom.

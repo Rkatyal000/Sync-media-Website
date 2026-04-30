@@ -2203,10 +2203,13 @@ section { padding: var(--pad-section) 0; }
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 28px;
-  --mq-gap: 64px;
+  gap: 22px;
+  --mq-gap: 22px;
+  /* Cinematic edge fade in addition to the absolute fade overlays */
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 9%, #000 91%, transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0, #000 9%, #000 91%, transparent 100%);
 }
-.mq-viewport--rich { gap: 26px; --mq-gap: 22px; }
+.mq-viewport--rich { gap: 22px; --mq-gap: 22px; }
 
 .mq-track {
   display: flex;
