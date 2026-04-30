@@ -3349,5 +3349,187 @@ section { overflow: hidden; }
     right: auto; top: auto; left: 50%; bottom: -7px;
     transform: translateX(-50%) rotate(135deg);
   }
+
+/* ============================================================
+   ABOUT PAGE — text-first, strong H2 hierarchy
+   ============================================================ */
+.about-page .about-hero-title {
+  max-width: 920px;
+}
+
+/* Steps (Data → Measurement → Action) */
+.about-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.about-step {
+  position: relative;
+  background: var(--bg-elev, var(--bg));
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 32px 28px 28px;
+  transition: border-color .25s ease, transform .35s cubic-bezier(.2,.7,.2,1);
+}
+.about-step:hover {
+  border-color: color-mix(in srgb, var(--accent) 28%, var(--line));
+  transform: translateY(-2px);
+}
+.about-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding: 4px 10px;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--line));
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+.about-step-title {
+  font-size: 20px;
+  letter-spacing: -0.01em;
+  margin: 0 0 10px;
+  color: var(--fg);
+}
+.about-step p {
+  color: var(--fg-muted);
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Roadmap (Artificial Society timeline) */
+.about-roadmap-title {
+  font-size: 22px;
+  letter-spacing: -0.012em;
+  margin: 8px 0 24px;
+  color: var(--fg);
+}
+.about-roadmap-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.about-roadmap-item {
+  padding: 22px 22px 22px 22px;
+  border-right: 1px dashed var(--line);
+  position: relative;
+}
+.about-roadmap-item:last-child { border-right: 0; }
+.about-roadmap-period {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.about-roadmap-points {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.about-roadmap-points li {
+  position: relative;
+  padding-left: 16px;
+  color: var(--fg);
+  font-size: 14px;
+  line-height: 1.55;
+}
+.about-roadmap-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 999px;
+}
+
+/* Leadership cards */
+.about-people {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.about-person {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  background: var(--bg-elev, var(--bg));
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 28px 28px 26px;
+  transition: border-color .25s ease, transform .35s cubic-bezier(.2,.7,.2,1);
+}
+.about-person:hover {
+  border-color: color-mix(in srgb, var(--accent) 28%, var(--line));
+  transform: translateY(-2px);
+}
+.about-person-mono {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--accent) 12%, var(--bg));
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0.04em;
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--line));
+}
+.about-person-name {
+  font-size: 20px;
+  letter-spacing: -0.012em;
+  margin: 0;
+  color: var(--fg);
+}
+.about-person-role {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.005em;
+}
+.about-person-body {
+  margin: 14px 0 0;
+  color: var(--fg-muted);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+@media (max-width: 980px) {
+  .about-steps { grid-template-columns: 1fr; }
+  .about-roadmap-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .about-roadmap-item:nth-child(2n) { border-right: 0; }
+  .about-roadmap-item:nth-child(-n+2) { border-bottom: 1px dashed var(--line); }
+  .about-people { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .about-roadmap-list { grid-template-columns: 1fr; }
+  .about-roadmap-item { border-right: 0; border-bottom: 1px dashed var(--line); }
+  .about-roadmap-item:last-child { border-bottom: 0; }
+  .about-person { padding: 22px 20px; gap: 16px; }
+  .about-person-mono { width: 48px; height: 48px; font-size: 15px; border-radius: 14px; }
+}
+
 }
 

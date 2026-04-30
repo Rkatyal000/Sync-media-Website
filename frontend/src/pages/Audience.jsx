@@ -90,7 +90,7 @@ export default function Audience() {
         <div className="container">
           <Reveal>
             <div style={{ maxWidth: 860 }}>
-              <span className="eyebrow">Section 1</span>
+              <span className="eyebrow">The shift</span>
               <h2>From Demographic Targeting to Behaviour-Led Audiences</h2>
               <p style={{ marginTop: 22 }}>Most media plans still begin with broad audience definitions: age, gender, geography, income group or consumer segment. These are useful starting points. But they do not answer the more important question: which exposure actually creates response?</p>
               <p style={{ marginTop: 14 }}>SYNC goes deeper. We study how real people behave after media exposure. Did they search for the brand? Did they visit a commerce platform? Did they open an app? Did they add a product to cart? Did the response improve when the exposure happened on a specific screen, platform, content context or time of day?</p>
@@ -105,7 +105,7 @@ export default function Audience() {
         <div className="container">
           <Reveal>
             <div style={{ maxWidth: 820 }}>
-              <span className="eyebrow">Section 2</span>
+              <span className="eyebrow">Approach</span>
               <h2>How SYNC Builds Outcome-Ready Audiences</h2>
             </div>
           </Reveal>
@@ -128,7 +128,7 @@ export default function Audience() {
         <div className="container">
           <Reveal>
             <div style={{ maxWidth: 860 }}>
-              <span className="eyebrow">Section 3</span>
+              <span className="eyebrow">Layer 1</span>
               <h2>Outcome Propensity Layer</h2>
               <p style={{ marginTop: 22 }}>Outcome propensity means the likelihood that a specific audience, exposed in a specific media condition, will take a desired action. SYNC studies exposure and behaviour together to identify where response is stronger or weaker than the campaign baseline.</p>
               <p style={{ marginTop: 14 }}>For example, one audience group may respond better to mobile video in the afternoon. Another may respond better to YouTube in the evening. Some may need repeated exposure before they act, while others may show quick search or commerce intent after fewer exposures.</p>
@@ -148,7 +148,7 @@ export default function Audience() {
         <div className="container">
           <Reveal>
             <div style={{ maxWidth: 860 }}>
-              <span className="eyebrow">Section 4</span>
+              <span className="eyebrow">Layer 2</span>
               <h2>Micro-Flight Planning Layer</h2>
               <p style={{ marginTop: 22 }}>A micro-flight is a smaller media cell built around a specific audience, platform, screen, context, time and frequency condition. Instead of treating a campaign as one large media buy, SYNC breaks it into smaller exposure cells. Each cell can be evaluated based on its likelihood to drive search, commerce action, add-to-cart behaviour or incremental reach.</p>
               <p style={{ marginTop: 14 }}>This allows budgets to move toward the audience conditions that are more likely to produce outcomes, and away from cells where reach is duplicated, frequency is saturated or response is weak.</p>
@@ -164,7 +164,7 @@ export default function Audience() {
         <div className="container">
           <Reveal>
             <div style={{ maxWidth: 860 }}>
-              <span className="eyebrow">Section 5</span>
+              <span className="eyebrow">Continuous learning</span>
               <h2>Built to Learn From Every Campaign</h2>
               <p style={{ marginTop: 22 }}>SYNC does not build a static audience model once and reuse it blindly. Every campaign adds new learning. We test which micro-flights delivered stronger search lift, commerce search, add-to-cart behaviour, incremental reach or improved frequency efficiency. These learnings are fed back into the audience model, making future planning sharper.</p>
               <p style={{ marginTop: 14 }}>Over time, SYNC helps brands understand not only where their audiences are, but how different audience groups respond across media environments.</p>
@@ -178,7 +178,7 @@ export default function Audience() {
         <div className="container">
           <Reveal>
             <div style={{ maxWidth: 860 }}>
-              <span className="eyebrow">Section 6</span>
+              <span className="eyebrow">Scale</span>
               <h2>Audience Intelligence That Scales</h2>
               <p style={{ marginTop: 22 }}>SYNC's audience models are built from observed exposure and outcome behaviour, then calibrated for activation across the larger addressable media universe. This allows brands to use real behavioural evidence to guide media decisions across TV, OTT, CTV, YouTube, mobile, digital and commerce-linked environments.</p>
               <p style={{ marginTop: 14 }}>The result is a more intelligent audience system: one that connects measurement, planning, activation and optimisation into a continuous loop.</p>

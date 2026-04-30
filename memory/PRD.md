@@ -29,3 +29,9 @@ Strict-execution production build: preserve all approved text/typography verbati
 - Swap still-referenced `CaseStudies` + `Solutions` + `Methodology` page files for 404-redirects if full removal is desired (currently reachable only via direct URL).
 - Author profile photos & richer biography blocks for the leadership team on /about.
 - Add "Learnings" / "Case Study" tag distribution to more posts once new pieces are written.
+
+## Iteration — About + Audience verbatim rewrite (Apr 30, 2026)
+- **About page** rewritten with verbatim copy from `SYNC About Page Research and Final Copy.pdf`. Strong H2 hierarchy, text-first layout, no clutter.
+  - Sections: hero, The problem (3 cards), Our approach (6 cards), Mission (philosophy band), Who we serve (3 cards), Data → Measurement → Action (3 step cards), SYNC Artificial Society + 3 sub-cards, 4-column dashed-line roadmap timeline (2026 Q2 → 2027 H1), Leadership (4 people with mono initial badges), Investor lines (2 cards), Why teams trust SYNC + JioStar proof line, final CTA band.
+  - Reveal scroll-in animations only; no fancy effects.
+- **Audience page** eyebrow labels updated from "Section N" → thematic labels (The shift / Approach / Layer 1 / Layer 2 / Continuous learning / Scale) so on-page copy reads as the verbatim docx content.
