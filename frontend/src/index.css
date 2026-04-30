@@ -3890,6 +3890,152 @@ section { overflow: hidden; }
 }
 .aud-propensity-bars {
   list-style: none;
+
+/* ============================================================
+   BLOG — system-diagram covers (replaces stock imagery)
+   ============================================================ */
+
+.post-cover--diagram {
+  position: relative;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--accent) 6%, var(--bg));
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+.post-cover--diagram .post-cover-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--accent) 10%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--accent) 10%, transparent) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.55;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 40%, transparent 80%);
+          mask-image: radial-gradient(ellipse at center, #000 40%, transparent 80%);
+  pointer-events: none;
+}
+.post-diagram-wrap {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  max-width: 460px;
+  padding: 0 12%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.post-diagram {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  color: var(--accent);
+}
+.post-diagram-t {
+  font: 600 11px/1 "Inter", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Accent tone overrides per post so each diagram feels unique but on-brand */
+.post-cover.accent-amber.post-cover--diagram   { color: #b45309; background: #fff7ed; }
+.post-cover.accent-violet.post-cover--diagram  { color: #6d28d9; background: #f5f3ff; }
+.post-cover.accent-teal.post-cover--diagram    { color: #0f766e; background: #f0fdfa; }
+.post-cover.accent-rose.post-cover--diagram    { color: #be123c; background: #fff1f2; }
+.post-cover.accent-emerald.post-cover--diagram { color: #047857; background: #f0fdf4; }
+.post-cover.accent-sky.post-cover--diagram     { color: #0369a1; background: #f0f9ff; }
+.post-cover.accent-slate.post-cover--diagram   { color: #334155; background: #f8fafc; }
+.post-cover.accent-indigo.post-cover--diagram  { color: #4338ca; background: #eef2ff; }
+
+/* Article hero — also diagram instead of stock image */
+.article-hero.article-hero--diagram {
+  background: color-mix(in srgb, var(--accent) 6%, var(--bg));
+  border: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 24px;
+  min-height: 340px;
+}
+.article-hero--diagram .post-diagram-wrap {
+  max-width: 620px;
+  margin: 0 auto 20px;
+}
+.article-hero--diagram .article-hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--accent) 10%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--accent) 10%, transparent) 1px, transparent 1px);
+  background-size: 44px 44px;
+  opacity: 0.5;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 40%, transparent 85%);
+          mask-image: radial-gradient(ellipse at center, #000 40%, transparent 85%);
+}
+.article-hero--diagram .article-hero-content { position: relative; z-index: 1; }
+
+/* ============================================================
+   Global image safety — prevent overflow / distortion
+   ============================================================ */
+.post-cover-img,
+.article-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+img { max-width: 100%; height: auto; }
+
+/* ============================================================
+   Alignment & spacing fixes — About / Audience
+   ============================================================ */
+.about-hero .container,
+.audience-page .about-hero .container {
+  padding-left: clamp(20px, 4vw, 40px);
+  padding-right: clamp(20px, 4vw, 40px);
+}
+.about-cards {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.about-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.about-card > p { flex: 1 1 auto; }
+
+@media (max-width: 1100px) {
+  .about-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 680px) {
+  .about-cards { grid-template-columns: 1fr; }
+  .post-diagram-wrap { padding: 0 8%; max-width: 100%; }
+  .article-hero.article-hero--diagram { padding: 36px 16px; min-height: 260px; }
+}
+
+/* The .aud-flow--rich grid balance */
+.aud-flow--rich { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 1100px) { .aud-flow--rich { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 560px)  { .aud-flow--rich { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Shift pair widths balance */
+.aud-shift-side { min-height: 100%; }
+
+/* About hero diagram card — contain overflow on narrow screens */
+.about-hero--rich .about-hero-diagram-wrap { overflow: hidden; }
+.about-hero-diagram,
+.aud-hero-svg { max-width: 100%; }
+
+/* Articles section alignment: ensure all post covers are equal height by ratio */
+.article-card-cover .post-cover { aspect-ratio: 16 / 9; min-height: 0; }
+
   margin: 0; padding: 0;
   display: flex;
   flex-direction: column;

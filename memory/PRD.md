@@ -35,3 +35,11 @@ Strict-execution production build: preserve all approved text/typography verbati
   - Sections: hero, The problem (3 cards), Our approach (6 cards), Mission (philosophy band), Who we serve (3 cards), Data → Measurement → Action (3 step cards), SYNC Artificial Society + 3 sub-cards, 4-column dashed-line roadmap timeline (2026 Q2 → 2027 H1), Leadership (4 people with mono initial badges), Investor lines (2 cards), Why teams trust SYNC + JioStar proof line, final CTA band.
   - Reveal scroll-in animations only; no fancy effects.
 - **Audience page** eyebrow labels updated from "Section N" → thematic labels (The shift / Approach / Layer 1 / Layer 2 / Continuous learning / Scale) so on-page copy reads as the verbatim docx content.
+
+## Iteration — Stock photos replaced + alignment fixes (Apr 30, 2026)
+- Removed all Unsplash / Pexels stock imagery from `posts.js` (12 image URLs deleted).
+- Created `components/PostDiagram.jsx` — 5 clean SVG system-diagram variants (Converge / Chart / Overlap / Loop / Grid). Variant chosen deterministically per post slug + tag.
+- `Blog.jsx` and `BlogPost.jsx` now render `<PostDiagram>` inside `.post-cover--diagram` (and `.article-hero--diagram` on post pages). Each post-cover shows a calm accent-tinted background, dotted grid mask, and the topic-appropriate system diagram. Tag pill retained.
+- Per-tone diagram styling for accents (amber, violet, teal, rose, emerald, sky, slate, indigo) — the diagram automatically picks up accent color and a subtle tinted background.
+- Image safety pass: `img.post-cover-img` / `img.article-hero-img` get `width:100%; height:100%; object-fit: cover` so any future imagery cannot overflow or distort. Global `img { max-width:100%; height:auto; }`.
+- Alignment pass: `.about-cards` re-locked to 3-col → 2-col → 1-col responsive grid; `.aud-flow--rich` uses 6-col → 3-col → 2-col grid; `.aud-shift-side { min-height:100% }` keeps the From/To pair equal height; `.about-hero--rich .about-hero-diagram-wrap { overflow:hidden }` so diagrams cannot overflow on narrow screens.

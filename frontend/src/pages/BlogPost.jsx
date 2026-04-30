@@ -2,28 +2,17 @@ import { Link, useParams, Navigate } from "react-router-dom";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Reveal from "../components/Reveal";
 import Seo from "../components/Seo";
+import PostDiagram from "../components/PostDiagram";
 import { getPostBySlug, getRelatedPosts } from "../data/posts";
 
 const formatDate = (iso) =>
   new Date(iso).toLocaleDateString("en", { month: "short", day: "numeric", year: "numeric" });
 
 function ArticleHero({ post }) {
-  const hasImage = Boolean(post.image);
   return (
-    <div className={`article-hero accent-${post.accent} ${hasImage ? "article-hero--img" : ""}`}>
-      {hasImage ? (
-        <>
-          <img className="article-hero-img" src={post.image} alt="" />
-          <span className="article-hero-shade" aria-hidden="true" />
-          <span className="article-hero-tint" aria-hidden="true" />
-        </>
-      ) : (
-        <>
-          <span className="article-hero-grid" aria-hidden="true" />
-          <span className="article-hero-orb" aria-hidden="true" />
-          <span className="article-hero-orb article-hero-orb-2" aria-hidden="true" />
-        </>
-      )}
+    <div className={`article-hero accent-${post.accent} article-hero--diagram`}>
+      <span className="article-hero-grid" aria-hidden="true" />
+      <PostDiagram slug={post.slug} tag={post.tag} />
       <div className="article-hero-content">
         <span className="post-cover-tag" style={{ position: "static" }}>{post.tag}</span>
       </div>
@@ -129,13 +118,9 @@ export default function BlogPost() {
               {related.map((p, i) => (
                 <Reveal key={p.slug} delay={i * 100}>
                   <Link to={`/blog/${p.slug}`} className={`post-card accent-${p.accent}`}>
-                    <div className={`post-cover accent-${p.accent}`} aria-hidden="true">
+                    <div className={`post-cover accent-${p.accent} post-cover--diagram`} aria-hidden="true">
                       <span className="post-cover-grid" />
-                      <span className="post-cover-orb" />
-                      <span className="post-cover-orb post-cover-orb-2" />
-                      <span className="post-cover-glyph">
-                        {p.tag.split(" ").slice(0, 2).map((w) => w[0]).join("").toUpperCase()}
-                      </span>
+                      <PostDiagram slug={p.slug} tag={p.tag} />
                       <span className="post-cover-tag">{p.tag}</span>
                     </div>
                     <div className="post-card-body">

@@ -3,41 +3,21 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import Reveal from "../components/Reveal";
 import Seo from "../components/Seo";
+import PostDiagram from "../components/PostDiagram";
 import { POSTS, CATEGORIES } from "../data/posts";
 
 const formatDate = (iso) =>
   new Date(iso).toLocaleDateString("en", { month: "long", day: "numeric", year: "numeric" });
 
 function PostCover({ post, ratio = "16 / 9" }) {
-  const hasImage = Boolean(post.image);
   return (
     <div
-      className={`post-cover accent-${post.accent} ${hasImage ? "post-cover--img" : ""}`}
+      className={`post-cover accent-${post.accent} post-cover--diagram`}
       style={{ aspectRatio: ratio }}
       aria-hidden="true"
     >
-      {hasImage ? (
-        <>
-          <img
-            className="post-cover-img"
-            src={post.image}
-            alt=""
-            loading="lazy"
-            decoding="async"
-          />
-          <span className="post-cover-shade" />
-          <span className="post-cover-tint" />
-        </>
-      ) : (
-        <>
-          <span className="post-cover-grid" />
-          <span className="post-cover-orb" />
-          <span className="post-cover-orb post-cover-orb-2" />
-          <span className="post-cover-glyph">
-            {post.tag.split(" ").slice(0, 2).map((w) => w[0]).join("").toUpperCase()}
-          </span>
-        </>
-      )}
+      <span className="post-cover-grid" />
+      <PostDiagram slug={post.slug} tag={post.tag} />
       <span className="post-cover-tag">{post.tag}</span>
     </div>
   );

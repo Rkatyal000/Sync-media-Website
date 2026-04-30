@@ -79,7 +79,6 @@ export const POSTS = [
     author: { name: "The SYNC Team", role: "Editorial" },
     accent: "amber",
     featured: true,
-    image: "https://images.unsplash.com/photo-1607494628003-613b464734e7?auto=format&fit=crop&w=1400&q=70",
     keywords: ["IPL", "JioCinema", "connected TV India", "cross-media measurement India", "incremental audience", "co-viewing", "cricket advertising"],
     geo: { region: "IN", placename: "India", locale: "en-IN" },
     body: [
@@ -108,7 +107,6 @@ export const POSTS = [
     author: { name: "The SYNC Team", role: "Editorial" },
     accent: "violet",
     featured: true,
-    image: "https://images.unsplash.com/photo-1664854953181-b12e6dda8b7c?auto=format&fit=crop&w=1400&q=70",
     keywords: ["AI in advertising", "AI measurement", "machine learning adtech", "media mix modelling 2026", "AI cross-media", "generative AI marketing"],
     geo: { region: "Global", locale: "en" },
     body: [
@@ -133,7 +131,6 @@ export const POSTS = [
     date: "2026-04-15",
     author: { name: "The SYNC Team", role: "Editorial" },
     accent: "blue",
-    image: "https://images.pexels.com/photos/5202917/pexels-photo-5202917.jpeg?auto=compress&cs=tinysrgb&w=1400",
     keywords: ["connected TV India", "CTV measurement", "smart TV advertising India", "OTT measurement", "JioCinema", "Disney+ Hotstar"],
     geo: { region: "IN", placename: "India", locale: "en-IN" },
     body: [
@@ -159,7 +156,6 @@ export const POSTS = [
     date: "2026-04-10",
     author: { name: "The SYNC Team", role: "Editorial" },
     accent: "rose",
-    image: "https://images.unsplash.com/photo-1546502208-81d149d52bd7?auto=format&fit=crop&w=1400&q=70",
     keywords: ["retail media", "Amazon Ads", "Flipkart Ads", "quick commerce advertising", "retail media measurement", "cross-media retail"],
     geo: { region: "Global", locale: "en" },
     body: [
@@ -180,7 +176,6 @@ export const POSTS = [
     date: "2026-04-04",
     author: { name: "The SYNC Team", role: "Editorial" },
     accent: "slate",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=70",
     keywords: ["measurement currency", "TV currency", "digital currency", "BARC", "Nielsen", "cross-media standard", "media measurement standards"],
     geo: { region: "Global", locale: "en" },
     body: [
@@ -206,7 +201,6 @@ export const POSTS = [
     date: "2026-03-28",
     author: { name: "The SYNC Team", role: "Editorial" },
     accent: "emerald",
-    image: "https://images.pexels.com/photos/9822733/pexels-photo-9822733.jpeg?auto=compress&cs=tinysrgb&w=1400",
     keywords: ["frequency waste", "frequency capping", "media optimisation", "audience saturation", "cross-screen frequency"],
     geo: { region: "Global", locale: "en" },
     body: [
@@ -228,7 +222,6 @@ export const POSTS = [
     date: "2026-04-12",
     author: { name: "The SYNC Team", role: "Editorial" },
     accent: "blue",
-    image: "https://images.unsplash.com/photo-1550615511-c317ce7f1d03?auto=format&fit=crop&w=1400&q=70",
     keywords: ["cross-media measurement", "single-source", "media measurement", "deduplicated reach", "cross-screen"],
     geo: { region: "Global", locale: "en" },
     body: [
@@ -251,7 +244,6 @@ export const POSTS = [
     date: "2026-04-08",
     author: { name: "The SYNC Team", role: "Editorial" },
     accent: "violet",
-    image: "https://images.pexels.com/photos/4330787/pexels-photo-4330787.jpeg?auto=compress&cs=tinysrgb&w=1400",
     keywords: ["deduplicated reach", "audience overlap", "cross-screen reach", "reach and frequency"],
     geo: { region: "Global", locale: "en" },
     body: [
@@ -273,7 +265,6 @@ export const POSTS = [
     date: "2026-04-02",
     author: { name: "The SYNC Team", role: "Editorial" },
     accent: "emerald",
-    image: "https://images.pexels.com/photos/30268012/pexels-photo-30268012.jpeg?auto=compress&cs=tinysrgb&w=1400",
     keywords: ["incremental reach", "media planning", "audience contribution", "cross-media planning"],
     geo: { region: "Global", locale: "en" },
     body: [
@@ -293,7 +284,6 @@ export const POSTS = [
     date: "2026-03-26",
     author: { name: "The SYNC Team", role: "Editorial" },
     accent: "amber",
-    image: "https://images.unsplash.com/photo-1587400563263-e77a5590bfe7?auto=format&fit=crop&w=1400&q=70",
     keywords: ["platform reporting", "reach overstated", "siloed measurement", "media reporting"],
     geo: { region: "Global", locale: "en" },
     body: [
@@ -313,7 +303,6 @@ export const POSTS = [
     date: "2026-03-18",
     author: { name: "The SYNC Team", role: "Editorial" },
     accent: "rose",
-    image: "https://images.unsplash.com/photo-1490127252417-7c393f993ee4?auto=format&fit=crop&w=1400&q=70",
     keywords: ["search lift", "media outcomes", "demand signals", "downstream measurement"],
     geo: { region: "Global", locale: "en" },
     body: [
@@ -333,7 +322,6 @@ export const POSTS = [
     date: "2026-03-10",
     author: { name: "The SYNC Team", role: "Editorial" },
     accent: "slate",
-    image: "https://images.pexels.com/photos/7865064/pexels-photo-7865064.jpeg?auto=compress&cs=tinysrgb&w=1400",
     keywords: ["GRP", "broadcasters", "incremental audience", "advertiser value"],
     geo: { region: "Global", locale: "en" },
     body: [
