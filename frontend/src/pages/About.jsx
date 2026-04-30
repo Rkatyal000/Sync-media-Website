@@ -1,23 +1,46 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import {
+  ArrowRight,
+  AlertTriangle,
+  TrendingUp,
+  EyeOff,
+  Layers,
+  Target,
+  Activity,
+  Users,
+  Sparkles,
+  Brain,
+  Database,
+  LineChart,
+  Compass,
+  ShieldCheck,
+  Zap,
+  Building2,
+  Tv,
+  Megaphone,
+  Network,
+} from "lucide-react";
 import Reveal from "../components/Reveal";
 import Seo from "../components/Seo";
 
 /**
- * About SYNC — text-first, strong H2 hierarchy.
- * All on-page copy is verbatim from "SYNC About Page Research and Final Copy".
+ * About SYNC — text-first hierarchy with subtle, premium visual richness.
+ * Copy is verbatim from the supplied "SYNC About Page Research and Final Copy".
  */
 
 const PROBLEM = [
   {
+    icon: Layers,
     title: "Siloed reporting",
     body: "TV, OTT, social and digital reporting often live in separate systems.",
   },
   {
+    icon: TrendingUp,
     title: "Inflated reach",
     body: "Without de-duplication, the same audience can be counted more than once.",
   },
   {
+    icon: EyeOff,
     title: "Weak outcome visibility",
     body: "Impressions and clicks alone rarely explain what moved search, commerce, app usage or business KPIs.",
   },
@@ -25,26 +48,32 @@ const PROBLEM = [
 
 const APPROACH = [
   {
+    icon: Network,
     title: "Single-source cross-media measurement",
     body: "One audience view across linear TV, OTT, YouTube, Meta and digital.",
   },
   {
+    icon: ShieldCheck,
     title: "De-duplicated reach and frequency",
     body: "A clearer understanding of true reach, overlap, incremental contribution and exposure pressure.",
   },
   {
+    icon: Activity,
     title: "Incrementality and causal impact",
     body: "A better basis for understanding what media added, what merely overlapped, and where budget should move.",
   },
   {
+    icon: Target,
     title: "People-level attribution",
     body: "Exposure histories linked to downstream behaviour with enough granularity to support real planning and optimisation questions.",
   },
   {
+    icon: Compass,
     title: "Decision support, not just reporting",
     body: "Outputs designed for action: where to rebalance spend, where frequency is wasteful, and which combinations are driving results.",
   },
   {
+    icon: Brain,
     title: "AI-driven insight generation",
     body: "AI used to surface patterns, explain performance shifts and make complex cross-media evidence easier for business teams to use.",
   },
@@ -52,14 +81,17 @@ const APPROACH = [
 
 const AUDIENCES = [
   {
+    icon: Megaphone,
     title: "Advertisers",
     body: "Understand what media is actually adding across screens, how much duplication exists, and what exposure is changing in the market.",
   },
   {
+    icon: Users,
     title: "Agencies",
     body: "Plan more clearly, defend recommendations with stronger evidence, and optimise with a more complete cross-platform view.",
   },
   {
+    icon: Tv,
     title: "Broadcasters and publishers",
     body: "Show how inventory contributes incremental audiences and commercial outcomes, not just delivery.",
   },
@@ -70,29 +102,35 @@ const STEPS = [
     n: "01",
     label: "Data",
     body: "Capture exposure signals across linear TV, OTT, YouTube, Meta and digital.",
+    Icon: Database,
   },
   {
     n: "02",
     label: "Measurement",
     body: "Build a unified exposure history for the same audience, then analyse reach, frequency, overlap and incremental contribution.",
+    Icon: LineChart,
   },
   {
     n: "03",
     label: "Action",
     body: "Connect exposure to search, commerce, app behaviour and business KPIs so teams can optimise spend with greater confidence.",
+    Icon: Zap,
   },
 ];
 
 const ARTIFICIAL_SOCIETY = [
   {
+    icon: Sparkles,
     title: "Vision",
     body: "Move from explaining campaigns after they end to evaluating likely media effects before key decisions are made.",
   },
   {
+    icon: Compass,
     title: "Mission",
     body: "Give advertisers, agencies and broadcasters a practical environment for exploring how changes in mix, reach, overlap and frequency may influence audience growth and business outcomes.",
   },
   {
+    icon: Layers,
     title: "Deliverables",
     body: "A scenario planner for cross-screen allocation; duplication and frequency-pressure forecasts; incremental reach and outcome-response hypotheses; AI-generated planning notes, risk flags and optimisation recommendations.",
   },
@@ -101,11 +139,7 @@ const ARTIFICIAL_SOCIETY = [
 const ROADMAP = [
   {
     period: "2026 · Q2",
-    items: [
-      "Define use cases",
-      "Audience graph design",
-      "Decision-support briefs",
-    ],
+    items: ["Define use cases", "Audience graph design", "Decision-support briefs"],
   },
   {
     period: "2026 · Q3",
@@ -113,17 +147,11 @@ const ROADMAP = [
   },
   {
     period: "2026 · Q4",
-    items: [
-      "Outcome-response modelling",
-      "AI-generated planning recommendations",
-    ],
+    items: ["Outcome-response modelling", "AI-generated planning recommendations"],
   },
   {
     period: "2027 · H1",
-    items: [
-      "Closed-loop learning",
-      "Measured outcomes feed back into forecasts",
-    ],
+    items: ["Closed-loop learning", "Measured outcomes feed back into forecasts"],
   },
 ];
 
@@ -132,34 +160,91 @@ const LEADERSHIP = [
     name: "Anubhav Sharma",
     role: "Founder & CEO",
     body: "Anubhav started SYNC to fix a simple but expensive gap in modern advertising: media became cross-screen, but measurement stayed siloed. He leads company strategy, category direction and the push to make media decisions more grounded in audience truth and real outcomes.",
+    tone: "a",
   },
   {
     name: "Vikas Saxena",
     role: "Co-founder & COO",
     body: "Vikas helps translate the company's category vision into an operating system: partnerships, execution discipline and the commercial infrastructure needed to scale a measurement business that clients can trust.",
+    tone: "b",
   },
   {
     name: "Prakhar Gupta",
     role: "Chief Product Officer",
     body: "Prakhar leads product, data and platform design across measurement, outcome-linkage and AI-assisted insight generation. His focus is turning complexity into tools that business teams can actually act on.",
+    tone: "c",
   },
   {
     name: "Jeena Duggal",
     role: "Chief Revenue Officer",
     body: "Jeena leads market adoption, revenue growth and client relationships. Her role is to make sure the platform solves real commercial problems for advertisers, agencies and media owners, not just analytical ones.",
+    tone: "d",
   },
 ];
 
 const INVESTORS = [
   {
+    icon: ShieldCheck,
     role: "Director & Investor",
     body: "Advises on governance, category development and disciplined long-term scale.",
   },
   {
+    icon: Building2,
     role: "Director & Investor",
     body: "Supports strategic partnerships, operating maturity and board-level decision-making.",
   },
 ];
+
+/* Subtle hero illustration: cross-screen lines converging into one node. */
+function HeroDiagram() {
+  return (
+    <svg className="about-hero-diagram" viewBox="0 0 760 220" aria-hidden="true">
+      <defs>
+        <linearGradient id="aboutLine" x1="0" x2="1">
+          <stop offset="0%" stopColor="#0066cc" stopOpacity="0" />
+          <stop offset="50%" stopColor="#0066cc" stopOpacity="0.7" />
+          <stop offset="100%" stopColor="#0066cc" stopOpacity="0" />
+        </linearGradient>
+      </defs>
+      {/* Source nodes */}
+      {[
+        { x: 60, y: 30, label: "TV" },
+        { x: 60, y: 80, label: "OTT" },
+        { x: 60, y: 130, label: "YouTube" },
+        { x: 60, y: 180, label: "Meta" },
+      ].map((n) => (
+        <g key={n.label}>
+          <circle cx={n.x} cy={n.y} r="5" fill="#0066cc" />
+          <text x={n.x - 16} y={n.y + 4} textAnchor="end" className="about-hero-diagram-label">
+            {n.label}
+          </text>
+        </g>
+      ))}
+      {/* Convergence lines */}
+      {[30, 80, 130, 180].map((y, i) => (
+        <path
+          key={y}
+          d={`M 70 ${y} C 260 ${y}, 380 110, 520 110`}
+          fill="none"
+          stroke="url(#aboutLine)"
+          strokeWidth="1.2"
+          className="about-hero-diagram-path"
+          style={{ animationDelay: `${i * 0.18}s` }}
+        />
+      ))}
+      {/* Central node */}
+      <circle cx="540" cy="110" r="14" fill="none" stroke="#0066cc" strokeWidth="1.5" className="about-hero-diagram-pulse" />
+      <circle cx="540" cy="110" r="6" fill="#0066cc" />
+      <text x="565" y="114" className="about-hero-diagram-label-strong">
+        One audience view
+      </text>
+      {/* Outcome line */}
+      <path d="M 555 110 L 700 110" stroke="#0066cc" strokeOpacity="0.5" strokeDasharray="3 4" />
+      <text x="700" y="100" className="about-hero-diagram-label">Outcomes</text>
+      <circle cx="700" cy="110" r="3" fill="#0066cc" />
+    </svg>
+  );
+}
 
 export default function About() {
   return (
@@ -181,13 +266,11 @@ export default function About() {
       />
 
       {/* HERO */}
-      <section className="about-hero">
+      <section className="about-hero about-hero--rich">
         <div className="container">
           <Reveal>
             <span className="eyebrow">About SYNC</span>
-            <h1 className="about-hero-title">
-              We show brands what media is really doing across screens.
-            </h1>
+            <h1 className="about-hero-title">We show brands what media is really doing across screens.</h1>
           </Reveal>
           <Reveal delay={120}>
             <p className="lead about-hero-lead">
@@ -203,6 +286,11 @@ export default function About() {
               <Link to="/contact" className="btn btn-secondary" data-testid="about-cta-demo">
                 Book a Demo <ArrowRight size={16} />
               </Link>
+            </div>
+          </Reveal>
+          <Reveal delay={260}>
+            <div className="about-hero-diagram-wrap" data-testid="about-hero-diagram">
+              <HeroDiagram />
             </div>
           </Reveal>
         </div>
@@ -223,15 +311,20 @@ export default function About() {
               </p>
             </div>
           </Reveal>
-          <div className="diff-grid" style={{ marginTop: 36 }}>
-            {PROBLEM.map((p, i) => (
-              <Reveal key={p.title} delay={(i % 3) * 90}>
-                <article className="diff-card">
-                  <h3>{p.title}</h3>
-                  <p>{p.body}</p>
-                </article>
-              </Reveal>
-            ))}
+          <div className="diff-grid about-cards" style={{ marginTop: 36 }}>
+            {PROBLEM.map((p, i) => {
+              const Ic = p.icon;
+              return (
+                <Reveal key={p.title} delay={(i % 3) * 90}>
+                  <article className="diff-card about-card about-card--warn">
+                    <span className="about-card-icon"><Ic size={20} strokeWidth={1.6} /></span>
+                    <h3>{p.title}</h3>
+                    <p>{p.body}</p>
+                    <span className="about-card-rule" aria-hidden="true" />
+                  </article>
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -248,15 +341,20 @@ export default function About() {
               </p>
             </div>
           </Reveal>
-          <div className="diff-grid" style={{ marginTop: 36 }}>
-            {APPROACH.map((a, i) => (
-              <Reveal key={a.title} delay={(i % 3) * 90}>
-                <article className="diff-card">
-                  <h3>{a.title}</h3>
-                  <p>{a.body}</p>
-                </article>
-              </Reveal>
-            ))}
+          <div className="diff-grid about-cards" style={{ marginTop: 36 }}>
+            {APPROACH.map((a, i) => {
+              const Ic = a.icon;
+              return (
+                <Reveal key={a.title} delay={(i % 3) * 90}>
+                  <article className="diff-card about-card">
+                    <span className="about-card-icon"><Ic size={20} strokeWidth={1.6} /></span>
+                    <h3>{a.title}</h3>
+                    <p>{a.body}</p>
+                    <span className="about-card-rule" aria-hidden="true" />
+                  </article>
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -284,15 +382,20 @@ export default function About() {
               <h2>Built for the teams making and defending media decisions.</h2>
             </div>
           </Reveal>
-          <div className="diff-grid" style={{ marginTop: 36 }}>
-            {AUDIENCES.map((a, i) => (
-              <Reveal key={a.title} delay={(i % 3) * 90}>
-                <article className="diff-card">
-                  <h3>{a.title}</h3>
-                  <p>{a.body}</p>
-                </article>
-              </Reveal>
-            ))}
+          <div className="diff-grid about-cards" style={{ marginTop: 36 }}>
+            {AUDIENCES.map((a, i) => {
+              const Ic = a.icon;
+              return (
+                <Reveal key={a.title} delay={(i % 3) * 90}>
+                  <article className="diff-card about-card about-card--feature">
+                    <span className="about-card-icon about-card-icon--lg"><Ic size={24} strokeWidth={1.6} /></span>
+                    <h3>{a.title}</h3>
+                    <p>{a.body}</p>
+                    <span className="about-card-rule" aria-hidden="true" />
+                  </article>
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -306,16 +409,23 @@ export default function About() {
               <h2>Data to measurement. Measurement to action.</h2>
             </div>
           </Reveal>
-          <div className="about-steps" style={{ marginTop: 40 }}>
-            {STEPS.map((s, i) => (
-              <Reveal key={s.n} delay={i * 100}>
-                <article className="about-step">
-                  <span className="about-step-num">{s.n}</span>
-                  <h3 className="about-step-title">Step {s.n.replace(/^0/, "")} — {s.label}</h3>
-                  <p>{s.body}</p>
-                </article>
-              </Reveal>
-            ))}
+          <div className="about-steps about-steps--connected" style={{ marginTop: 40 }}>
+            <span className="about-steps-line" aria-hidden="true">
+              <span className="about-steps-line-pulse" />
+            </span>
+            {STEPS.map((s, i) => {
+              const Ic = s.Icon;
+              return (
+                <Reveal key={s.n} delay={i * 120}>
+                  <article className="about-step">
+                    <span className="about-step-icon"><Ic size={22} strokeWidth={1.6} /></span>
+                    <span className="about-step-num">Step {s.n.replace(/^0/, "")} · {s.label}</span>
+                    <h3 className="about-step-title">{s.label}</h3>
+                    <p>{s.body}</p>
+                  </article>
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -332,15 +442,20 @@ export default function About() {
               </p>
             </div>
           </Reveal>
-          <div className="diff-grid" style={{ marginTop: 36 }}>
-            {ARTIFICIAL_SOCIETY.map((a, i) => (
-              <Reveal key={a.title} delay={(i % 3) * 90}>
-                <article className="diff-card">
-                  <h3>{a.title}</h3>
-                  <p>{a.body}</p>
-                </article>
-              </Reveal>
-            ))}
+          <div className="diff-grid about-cards" style={{ marginTop: 36 }}>
+            {ARTIFICIAL_SOCIETY.map((a, i) => {
+              const Ic = a.icon;
+              return (
+                <Reveal key={a.title} delay={(i % 3) * 90}>
+                  <article className="diff-card about-card about-card--feature">
+                    <span className="about-card-icon about-card-icon--lg"><Ic size={24} strokeWidth={1.6} /></span>
+                    <h3>{a.title}</h3>
+                    <p>{a.body}</p>
+                    <span className="about-card-rule" aria-hidden="true" />
+                  </article>
+                </Reveal>
+              );
+            })}
           </div>
 
           {/* Roadmap timeline */}
@@ -349,8 +464,11 @@ export default function About() {
               <span className="eyebrow">Roadmap</span>
               <h3 className="about-roadmap-title">SYNC Artificial Society roadmap</h3>
               <ol className="about-roadmap-list" data-testid="about-roadmap">
-                {ROADMAP.map((r) => (
-                  <li key={r.period} className="about-roadmap-item">
+                {ROADMAP.map((r, i) => (
+                  <li key={r.period} className="about-roadmap-item" style={{ animationDelay: `${i * 0.1}s` }}>
+                    <span className="about-roadmap-dot" aria-hidden="true">
+                      <span className="about-roadmap-dot-pulse" />
+                    </span>
                     <span className="about-roadmap-period">{r.period}</span>
                     <ul className="about-roadmap-points">
                       {r.items.map((it) => (
@@ -376,17 +494,19 @@ export default function About() {
           </Reveal>
           <div className="about-people" style={{ marginTop: 40 }}>
             {LEADERSHIP.map((p, i) => (
-              <Reveal key={p.name} delay={(i % 2) * 100}>
-                <article className="about-person" data-testid={`about-person-${p.name.toLowerCase().replace(/\s+/g, "-")}`}>
-                  <span className="about-person-mono" aria-hidden="true">
-                    {p.name
-                      .split(" ")
-                      .map((s) => s[0])
-                      .join("")
-                      .slice(0, 2)
-                      .toUpperCase()}
+              <Reveal key={p.name} delay={(i % 2) * 120}>
+                <article className={`about-person about-person--${p.tone}`} data-testid={`about-person-${p.name.toLowerCase().replace(/\s+/g, "-")}`}>
+                  <span className="about-person-avatar" aria-hidden="true">
+                    <span className="about-person-avatar-mono">
+                      {p.name
+                        .split(" ")
+                        .map((s) => s[0])
+                        .join("")
+                        .slice(0, 2)
+                        .toUpperCase()}
+                    </span>
                   </span>
-                  <div>
+                  <div className="about-person-body-wrap">
                     <h3 className="about-person-name">{p.name}</h3>
                     <span className="about-person-role">{p.role}</span>
                     <p className="about-person-body">{p.body}</p>
@@ -403,15 +523,20 @@ export default function About() {
               <h3 className="about-roadmap-title">Board &amp; capital partners</h3>
             </div>
           </Reveal>
-          <div className="diff-grid" style={{ marginTop: 22 }}>
-            {INVESTORS.map((inv, i) => (
-              <Reveal key={`${inv.role}-${i}`} delay={(i % 2) * 90}>
-                <article className="diff-card">
-                  <h3>{inv.role}</h3>
-                  <p>{inv.body}</p>
-                </article>
-              </Reveal>
-            ))}
+          <div className="diff-grid about-cards" style={{ marginTop: 22 }}>
+            {INVESTORS.map((inv, i) => {
+              const Ic = inv.icon;
+              return (
+                <Reveal key={`${inv.role}-${i}`} delay={(i % 2) * 90}>
+                  <article className="diff-card about-card">
+                    <span className="about-card-icon"><Ic size={20} strokeWidth={1.6} /></span>
+                    <h3>{inv.role}</h3>
+                    <p>{inv.body}</p>
+                    <span className="about-card-rule" aria-hidden="true" />
+                  </article>
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
